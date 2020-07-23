@@ -5,7 +5,8 @@ class List extends React.Component {
     render() {
         return(
             <div>
-             {this.props.children}
+             List
+             
             </div>
         );
     }

@@ -2,10 +2,20 @@ import React from 'react';
 
 
 class Add extends React.Component {
+    constructor(props) {
+        super(props);
+    
+        this.state={
+          input: '',
+          price: 1,
+        }
+      } 
     render() {
         return(
             <div>
-              {this.props.children}
+              Add
+              {/* <input></input>
+              <button>add</button> */}
             </div>
         );
     }
