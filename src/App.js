@@ -5,26 +5,31 @@ import List from './components/List';
 import Add from './components/Add';
 import Pay from './components/Pay';
 
+
+const MIN_SLIDER = 1;
+const MAX_SLIDER = 10;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state= {
-      activeTab: 'list',
+      activeTab: 'add',
       items: []
     };
-
+this.onClickTabAdd=this.onClickTabAdd.bind(this)
+this.onClickTabList=this.onClickTabList.bind(this)
+this.onClickTabPay=this.onClickTabPay.bind(this)
   }
 
   onClickTabAdd() {
-    this.setState({
-      activeTab: 'add'
-    });
+    this.setState({ activeTab: 'add' });
   }
   onClickTabList() {
     this.setState({
       activeTab: 'list'
     });
+  
   }
   onClickTabPay() {
     this.setState({
@@ -65,12 +70,13 @@ class App extends React.Component {
           <Button onClick={this.onClickTabList}>List</Button>
           <Button onClick={this.onClickTabPay}>Pay</Button>
         </div>
-      <div className="row"> 
-        {this.renderTabAdd()}
-        {this.renderTabList()}
-        {this.renderTabPay()}
-   
-      </div>
+        <div className="row"> 
+          {this.renderTabAdd()}
+          {this.renderTabList()}
+          {this.renderTabPay()}
+    
+        </div>
+
       </div>
     );
   }
