@@ -9,14 +9,25 @@ class Add extends React.Component {
         this.state={
           input: '',
           price: 1,
-        }
+        } 
+        this.onChange=this.onChange.bind(this)   
       } 
+      onChange(evt) {
+       
+        this.setState({
+          input: evt.target.value,
+        });
+      }
     render() {
+      console.log(this.state.input)
         return(
             <div className="container-fluid">
               <div className="row">
                 Add
-                <input></input>
+                <input onChange={this.onChange}>
+                 
+                
+                </input>
                 <button>add</button>
               </div>
               <Slider

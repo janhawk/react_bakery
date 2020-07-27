@@ -23,7 +23,9 @@ this.onClickTabPay=this.onClickTabPay.bind(this)
   }
 
   onClickTabAdd() {
-    this.setState({ activeTab: 'add' });
+    this.setState({ 
+      activeTab: 'add' 
+    });
   }
   onClickTabList() {
     this.setState({
